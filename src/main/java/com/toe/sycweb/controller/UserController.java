@@ -7,18 +7,18 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.toe.sycweb.repository.IUserRepository;
+import com.toe.sycweb.service.impl.UserService;
 
 @Controller
 @RequestMapping(value="user")
 public class UserController {
 
 	@Autowired
-	IUserRepository iUserRepository;
+	UserService userService;
 	
 	@RequestMapping(value="login.do")
 	public @ResponseBody Boolean login(ModelMap modelMap) {
-		System.out.println("aa");
+		userService.login("a", "a");
 		return false;
 	}
 }

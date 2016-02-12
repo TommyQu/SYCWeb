@@ -3,9 +3,8 @@ package com.toe.sycweb.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.toe.sycweb.model.User;
+import com.toe.sycweb.entity.User;
 
-@Repository
-public interface IUserRepository extends MongoRepository<User, String>{
+public interface IUserRepository {
 	public Boolean login(String email, String pwd);
 }
