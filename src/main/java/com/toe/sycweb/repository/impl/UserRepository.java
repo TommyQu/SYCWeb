@@ -22,7 +22,7 @@ public class UserRepository implements IUserRepository{
 		user.setNickName("Tommy");
 		user.setGender("male");
 		mongoTemplate.save(user);
-		System.out.println("bb");
+		System.out.println("aa");
 		return null;
 	}
 

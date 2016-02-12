@@ -19,25 +19,25 @@
         <h4 class="modal-title">User Login</h4>
       </div>
       <div class="modal-body">
-      	<form class="form-horizontal" role="form" action="javascript:login()">
+      	<form class="form-horizontal" role="form">
 			<div class="form-group">
 				<label class="control-label col-sm-3" for="user-email">Email:</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="user-email" name="userEmail"
+					<input type="text" class="form-control" id="user-email" ng-model="email"
 						placeholder="Enter email">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-3" for="user-pwd">Password:</label>
 				<div class="col-sm-9">
-					<input type="password" class="form-control" id="user-pwd" name="userPwd"
+					<input type="password" class="form-control" id="user-pwd" ng-model="pwd"
 						placeholder="Enter password">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="button" class="btn btn-danger login-btn" data-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-primary login-btn" id="login-submit-btn">Submit</button>
+					<button type="submit" class="btn btn-primary login-btn" id="login-submit-btn" ng-click="login()">Submit</button>
 				</div>
 			</div>
 		</form>

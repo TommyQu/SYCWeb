@@ -17,8 +17,10 @@ public class UserController {
 	UserService userService;
 	
 	@RequestMapping(value="login.do")
-	public @ResponseBody Boolean login(ModelMap modelMap) {
+	public @ResponseBody Boolean login(String email, String pwd, ModelMap modelMap) {
 		userService.login("a", "a");
+		System.out.println(email);
+		System.out.println(pwd);
 		return false;
 	}
 }

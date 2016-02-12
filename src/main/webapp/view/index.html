@@ -16,10 +16,9 @@
 <body>
 	<div ng-app="sycWebApp">
 		<div ng-controller="loginCtrl">
-			<div w3-include-html="http://localhost:8080/SYCWeb/view/global/header.html"></div> 
+			<div ng-include="'http://localhost:8080/SYCWeb/view/global/header.html'"></div>
 		</div>
 	</div>
-	<a href="user/login.do">Click</a>
 	<script src="http://localhost:8080/SYCWeb/js/global/w3-include-html.js"></script>
 	<script src="http://localhost:8080/SYCWeb/js/global/login.js"></script>
 </body>
