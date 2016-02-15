@@ -9,11 +9,17 @@
             http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">  
        
     <!-- Default bean name is 'mongo' -->  
-    <mongo:mongo host="localhost" port="27017"/>  
-       
+	<mongo:mongo host="ds031561.mongolab.com" port="31561" />
+    
     <!-- Offers convenience methods and automatic mapping between MongoDB JSON documents and your domain classes. -->  
     <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">  
             <constructor-arg ref="mongo"/>  
             <constructor-arg name="databaseName" value="sycweb"/>  
+            <constructor-arg name="userCredentials" ref="userCredentials"/>
     </bean>  
+    
+    <bean id="userCredentials" class="org.springframework.data.authentication.UserCredentials">
+    	<constructor-arg name="username" value="client" />
+    	<constructor-arg name="password" value="20040132" />
+	</bean>
 </beans>

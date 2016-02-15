@@ -8,7 +8,7 @@ import com.toe.sycweb.entity.User;
 import com.toe.sycweb.repository.IUserRepository;
 
 @Repository
-public class UserRepository implements IUserRepository{
+public class UserRepositoryImpl implements IUserRepository{
 
 	@Autowired
 	MongoTemplate mongoTemplate;
@@ -17,12 +17,11 @@ public class UserRepository implements IUserRepository{
 	public Boolean login(String email, String pwd) {
 		User user = new User();
 		user.setId("1");
-		user.setEmail("a@a.com");
-		user.setPwd("123");
+		user.setEmail(email);
+		user.setPwd(pwd);
 		user.setNickName("Tommy");
 		user.setGender("male");
 		mongoTemplate.save(user);
-		System.out.println("aa");
 		return null;
 	}
 

@@ -1,23 +1,20 @@
 var app = angular.module('sycWebApp', []);
 app.controller('loginCtrl', function($scope, $http) {
 	$scope.login = function () {
+		var email = $("#email").val();
+		var pwd = $("#pwd").val();
 		$http({
 			method: 'GET',
 			url: 'user/login.do',
 			params: {
-				email: $scope.email,
-				pwd: $scope.pwd
+				email: email,
+				pwd: pwd
 			}
 		}).then(function successCallback(response) {
 
 			}, function errorCallback(response) {
 
 			});
-//		$http.get("user/login.do")
-//		.then(function(response) {
-//			var myWelcome = response.data;
-//			alert(myWelcome);
-//		});
 	};
 
 });
