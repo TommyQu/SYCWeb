@@ -1,0 +1,26 @@
+#syc-logo-img {
+	margin-top: 40px;
+	margin-left: 40px;
+}
+
+#syc-nav {
+	width: 600px;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+#log-in-btn {
+	float: right;
+	margin-top: -65px;
+    margin-right: 140px;
+}
+
+#sign-up-btn {
+ 	float: right;
+	margin-top: -65px;
+    margin-right: 40px;
+}
+
+#syc-nav ul li {
+
+}

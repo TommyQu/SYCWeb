@@ -1,16 +1,18 @@
 <img id="syc-logo-img" alt="" src="http://localhost:8080/SYCWeb/img/syc-logo.png">
 <nav id="syc-nav" class="navbar navbar-default">
 	<ul class="nav navbar-nav">
-		<li class="active"><a href="http://localhost:8080/SYCWeb/view/index.html">Home</a></li>
+		<li><a href="http://localhost:8080/SYCWeb/view/index.html">Home</a></li>
 		<li><a href="http://localhost:8080/SYCWeb/view/menu.html">Menu</a></li>
-		<li><a href="#">Page 2</a></li>
-		<li><a href="#">Page 3</a></li>
+		<li><a href="#">Post</a></li>
+		<li><a href="#">Event</a></li>
 	</ul>
 </nav>
-<button type="button" id="sign-in-btn" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Sign in</button>
+<a type="button" id="log-in-btn" class="btn btn-danger" data-toggle="modal" data-target="#loginModal" ng-show="btnShow">Log In</a>
+<a type="button" id="sign-up-btn" class="btn btn-danger" href="http://localhost:8080/SYCWeb/view/signUp.html" ng-show="btnShow">Sign Up</a>
+<p id="nickname" ng-show="nicknameShow">QWER</p>
 
 <!-- Login Popup Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="loginModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">

@@ -3,6 +3,7 @@ package com.toe.sycweb.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.toe.sycweb.entity.User;
 import com.toe.sycweb.repository.impl.UserRepositoryImpl;
 import com.toe.sycweb.service.IUserService;
 
@@ -13,7 +14,7 @@ public class UserServiceImpl implements IUserService {
 	UserRepositoryImpl userRepository;
 	
 	@Override
-	public Boolean login(String email, String pwd) {
+	public User login(String email, String pwd) {
 		return userRepository.login(email, pwd);
 	}
 
