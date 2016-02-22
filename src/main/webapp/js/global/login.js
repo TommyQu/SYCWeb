@@ -1,10 +1,14 @@
-app.controller('headerCtrl', function($scope, $http) {
-	$scope.btnShow = true;
-	$scope.nicknameShow = false;
+app.controller('headerCtrl', function($scope, $http, $cookies) {
+	var userCookie = $cookies.get('userCookie');
+	$scope.loginShow = true;
+	if("" != userCookie && userCookie != null) {
+		var userObj = JSON.parse(userCookie);
+		$scope.loginShow = false;
+		$scope.nickname = userObj.nickname;
+	}
 	$scope.login = function () {
-		
-		var email = $("#email").val();
-		var pwd = $("#pwd").val();
+		var email = $scope.email;
+		var pwd = $scope.pwd;
 		$http({
 			method: 'GET',
 			url: 'http://localhost:8080/SYCWeb/user/login.do',
@@ -13,14 +17,19 @@ app.controller('headerCtrl', function($scope, $http) {
 				pwd: pwd
 			}
 		}).then(function successCallback(response) {
-				console.log("test:", response);
-//				location.reload();
-//				$scope.user = response.data;
-//				alert($scope.user);
-//				console.log("test:", $scope.user.email);
+				var result = response.data;
+				if(result == null || result == "")
+					alert("Login Failed!");
+				else {
+					$cookies.put('userCookie', response.data);
+					location.reload();
+				}
 			}, function errorCallback(response) {
 				alert(response.data);
 			});
 	};
-
+	$scope.signOut = function () {
+		$cookies.remove('userCookie');
+		location.reload();
+	};
 });

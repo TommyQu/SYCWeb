@@ -1,3 +1,4 @@
+<div ng-controller="headerCtrl">
 <img id="syc-logo-img" alt="" src="http://localhost:8080/SYCWeb/img/syc-logo.png">
 <nav id="syc-nav" class="navbar navbar-default">
 	<ul class="nav navbar-nav">
@@ -7,9 +8,11 @@
 		<li><a href="#">Event</a></li>
 	</ul>
 </nav>
-<a type="button" id="log-in-btn" class="btn btn-danger" data-toggle="modal" data-target="#loginModal" ng-show="btnShow">Log In</a>
-<a type="button" id="sign-up-btn" class="btn btn-danger" href="http://localhost:8080/SYCWeb/view/signUp.html" ng-show="btnShow">Sign Up</a>
-<p id="nickname" ng-show="nicknameShow">QWER</p>
+<a type="button" id="log-in-btn" class="btn btn-danger" data-toggle="modal" data-target="#loginModal" ng-show="loginShow">Log In</a>
+<a type="button" id="sign-up-btn" class="btn btn-danger" href="http://localhost:8080/SYCWeb/view/signUp.html" ng-show="loginShow">Sign Up</a>
+<p id="nickname" ng-show="!loginShow">{{nickname}}</p>
+<a type="button" id="sign-out-btn" class="btn btn-danger" ng-show="!loginShow" ng-click="signOut()">Sign Out</a>
+
 
 <!-- Login Popup Modal -->
 <div id="loginModal" class="modal fade" role="dialog">
@@ -25,14 +28,14 @@
 			<div class="form-group">
 				<label class="control-label col-sm-3" for="email">Email:</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="email" ng-model="email"
+					<input type="text" class="form-control" ng-model="email"
 						placeholder="Enter email">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-3" for="pwd">Password:</label>
 				<div class="col-sm-9">
-					<input type="password" class="form-control" id="pwd" ng-model="pwd"
+					<input type="password" class="form-control" ng-model="pwd"
 						placeholder="Enter password">
 				</div>
 			</div>
@@ -46,4 +49,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

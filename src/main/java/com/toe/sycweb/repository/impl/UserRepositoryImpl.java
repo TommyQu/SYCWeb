@@ -22,14 +22,31 @@ public class UserRepositoryImpl implements IUserRepository{
 		try {
 			Query query = new Query();
 			query.addCriteria(Criteria.where("email").is(email).and("pwd").is(pwd));
-			List<User> userList = mongoTemplate.find(query, User.class);
-			if(userList.size() > 0) {
-				return userList.get(0);
+			User user = mongoTemplate.findOne(query, User.class);
+			if(user != null) {
+				return user;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public String signUp(User user) {
+		try {
+			Query query = new Query();
+			query.addCriteria(Criteria.where("email").is(user.getEmail()));
+			Boolean isUserExists = mongoTemplate.exists(query, User.class);
+			if(isUserExists == true)
+				return "exist";
+			else {
+				mongoTemplate.insert(user, "user");
+				return "success";
+			}	
+		} catch (Exception e) {
+			return e.getMessage().toString();
+		}
 	}
 
 }

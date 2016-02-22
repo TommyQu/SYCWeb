@@ -1,12 +1,12 @@
-app.controller('signUpCtrl', function($scope, $http) {
+app.controller('signUpCtrl', function($scope, $http, $cookies) {
 	$scope.signUp = function () {
-		var email = $("#email").val();
-		var nickname = $("#nickname").val();
-		var pwd = $("#pwd").val();
-		var gender = $('input[name=gender-radio]:checked', '#sign-up-form').val()
+		var email = $scope.email;
+		var nickname = $scope.nickname;
+		var pwd = $scope.pwd;
+		var gender = $('input[name=gender-radio]:checked', '#sign-up-form').val();
 		$http({
 			method: 'GET',
-			url: 'user/signUp.do',
+			url: 'http://localhost:8080/SYCWeb/user/signUp.do',
 			params: {
 				email: email,
 				nickname: nickname,
@@ -14,9 +14,17 @@ app.controller('signUpCtrl', function($scope, $http) {
 				gender: gender
 			}
 		}).then(function successCallback(response) {
-
+				var result = response.data;
+				if("exist" == result)
+					alert("Email is already exists!");
+				else if("success" == result) {
+					alert("Sign up succeeded!");
+					window.history.back();
+				}
+				else
+					alert(result);
 			}, function errorCallback(response) {
-
+				alert(response.data);
 			});
 	};
 

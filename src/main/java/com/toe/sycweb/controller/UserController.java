@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.toe.sycweb.entity.User;
+import com.toe.sycweb.service.IUserService;
 import com.toe.sycweb.service.impl.UserServiceImpl;
 
 @Controller
@@ -21,22 +22,26 @@ import com.toe.sycweb.service.impl.UserServiceImpl;
 public class UserController {
 
 	@Autowired
-	UserServiceImpl userService;
+	IUserService userService;
 	
 	@RequestMapping(value="login.do")
-	public @ResponseBody User login(String email, String pwd, HttpServletResponse response, ModelMap modelMap) {
+	public @ResponseBody String login(String email, String pwd, ModelMap modelMap) {
 		User user = userService.login(email, pwd);
 		String userJSON = JSON.toJSONString(user);
 		if(user != null) {
-			Cookie cookie = new Cookie("user", userJSON);
-			response.addCookie(cookie);
+			modelMap.addAttribute("userJSON", userJSON);
+			return userJSON;
 		}
-		return user;
+		return null;
 	}
 	
 	@RequestMapping(value="signUp.do")
-	public @ResponseBody Boolean signUp(String email, String pwd, ModelMap modelMap) {
-		userService.login(email, pwd);
-		return false;
+	public @ResponseBody String signUp(String email, String nickname, String pwd, String gender, ModelMap modelMap) {
+		User user = new User();
+		user.setEmail(email);
+		user.setNickname(nickname);
+		user.setPwd(pwd);
+		user.setGender(gender);
+		return userService.signUp(user);
 	}
 }
