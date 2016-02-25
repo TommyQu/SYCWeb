@@ -9,13 +9,13 @@
 	margin-left: 40px;
 }
 
-#log-in-btn {
+#log-in-btn, #nickname {
 	float: right;
 	margin-top: -65px;
     margin-right: 140px;
 }
 
-#sign-up-btn {
+#sign-up-btn, #sign-out-btn {
  	float: right;
 	margin-top: -65px;
     margin-right: 40px;
