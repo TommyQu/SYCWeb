@@ -18,7 +18,7 @@ app.controller('headerCtrl', function($scope, $http, $cookies) {
 			}
 		}).then(function successCallback(response) {
 				var result = response.data;
-				if(result == null || result == "")
+				if("fail" == result)
 					alert("Login Failed!");
 				else {
 					$cookies.put('userCookie', response.data);
