@@ -2,14 +2,14 @@
 <img id="syc-logo-img" alt="" src="http://localhost:8080/SYCWeb/img/syc-logo.png">
 <nav id="syc-nav" class="navbar navbar-default">
 	<ul class="nav navbar-nav">
-		<li><a href="http://localhost:8080/SYCWeb/view/index.html">Home</a></li>
-		<li><a href="http://localhost:8080/SYCWeb/view/menu.html">Menu</a></li>
+		<li><a href="#/home">Home</a></li>
+		<li><a href="#/menu">Menu</a></li>
 		<li><a href="#">Post</a></li>
 		<li><a href="#">Event</a></li>
 	</ul>
 </nav>
 <a type="button" id="log-in-btn" class="btn btn-danger" data-toggle="modal" data-target="#loginModal" ng-show="loginShow">Log In</a>
-<a type="button" id="sign-up-btn" class="btn btn-danger" href="http://localhost:8080/SYCWeb/view/signUp.html" ng-show="loginShow">Sign Up</a>
+<a type="button" id="sign-up-btn" class="btn btn-danger" href="#/signUp" ng-show="loginShow">Sign Up</a>
 <p id="nickname" ng-show="!loginShow">{{nickname}}</p>
 <a type="button" id="sign-out-btn" class="btn btn-danger" ng-show="!loginShow" ng-click="signOut()">Sign Out</a>
 
