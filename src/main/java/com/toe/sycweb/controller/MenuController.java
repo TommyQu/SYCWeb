@@ -13,9 +13,9 @@ import com.toe.sycweb.service.IMenuService;
 @Controller
 @RequestMapping(value="menu")
 public class MenuController {
-//	
-//	@Autowired
-//	IMenuService menuService;
+	
+	@Autowired
+	IMenuService menuService;
 	
 	@RequestMapping(value="newMenu.do")
 	public @ResponseBody String newMenu(ModelMap modelMap) {
