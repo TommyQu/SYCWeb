@@ -1,36 +1,25 @@
 <!DOCTYPE html>
-<html ng-app="sycWebApp">
+<html>
 <head>
 	<title>Share Your Cuisine</title>
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<!-- Angular -->
-  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.min.js"></script>
-  	<!-- UI-Router -->
-  	<script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>  	
+	<!-- AngularJS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.min.js"></script>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="http://localhost:8080/SYCWeb/css/global/header.css">
-	<link rel="stylesheet" href="http://localhost:8080/SYCWeb/css/index.css">
-	
 </head>
 
 <body>
-	<div>
-		<header ng-include="'view/header.html'"></header>
-			<div class="container">
-								
-					<div ui-view></div>
-				
-			</div>		
+	<div ng-app="sycWebApp">
+		<div ng-include="'http://localhost:8080/SYCWeb/view/global/header.html'"></div>
+		<a type="button" class="btn btn-default" ng-show="!loginShow" href="http://localhost:8080/SYCWeb/view/menu/newMenu.html">New Menu</a>
 	</div>
-	
-	
-	<script src="js/module.js"></script>
-	<script src="js/controller/headerCtrl.js"></script>	
-	<script src="js/controller/homeCtrl.js"></script>	
+	<script src="http://localhost:8080/SYCWeb/js/global/init.js"></script>
+	<script src="http://localhost:8080/SYCWeb/js/global/login.js"></script>
 </body>
 </html>

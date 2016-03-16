@@ -5,17 +5,17 @@ import org.springframework.stereotype.Service;
 
 import com.toe.sycweb.entity.Menu;
 import com.toe.sycweb.repository.IMenuRepository;
-import com.toe.sycweb.service.IMenuService;
 
 @Service
-public class MenuServiceImpl implements IMenuService {
+public class MenuServiceImpl implements IMenuRepository{
 
 	@Autowired
 	IMenuRepository menuRepository;
 	
 	@Override
 	public String newMenu(Menu menu) {
-		return menuRepository.newMenu(menu);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
