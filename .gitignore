@@ -1,4 +1,4 @@
- /target/
-  .classpath
- -target/
- -.settings/
+-/target/
+-.classpath
+-.settings/
+-*.properties
