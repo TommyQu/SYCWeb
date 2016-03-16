@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+-/target/
+-.classpath
+-.settings/
+-*.properties
+=======
 /target/
 .classpath
 .settings/
+>>>>>>> master

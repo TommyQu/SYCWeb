@@ -12,47 +12,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="http://localhost:8080/SYCWeb/css/global/header.css">
-	<link rel="stylesheet" href="http://localhost:8080/SYCWeb/css/signUp.css">
+	<link rel="stylesheet" href="http://localhost:8080/SYCWeb/css/index.css">
 </head>
 
 <body>
 	<div ng-app="sycWebApp">
 		<div ng-include="'http://localhost:8080/SYCWeb/view/global/header.html'"></div>
-		<div ng-controller="signUpCtrl" id="sign-up-div">
-			<form role="form" id="sign-up-form">
-				<div class="form-group">
-					<label for="email">Email address:</label> 
-					<input type="email" class="form-control" ng-model="email" />
-				</div>
-				<div class="form-group">
-					<label for="nickname">Nickname:</label> 
-					<input type="text" class="form-control" ng-model="nickname" />
-				</div>
-				<div class="form-group">
-					<label for="pwd">Password:</label> 
-					<input type="password" class="form-control" ng-model="pwd" />
-				</div>
-				<div class="form-group">
-					<label for="re-pwd">Re-enter Password:</label> 
-					<input type="password" class="form-control" ng-model="re-pwd" />
-				</div>
-				<div class="form-group">
-					<label for="gender">Gender:</label>
-					<div id="gender">
-						<label class="radio-inline"> 
-							<input type="radio" name="gender-radio" value="Male" />Male
-						</label> 
-						<label class="radio-inline"> 
-							<input type="radio" name="gender-radio" value="Female" />Female
-						</label>
-					</div>
-				</div>
-				<button type="submit" class="btn btn-default" ng-click="signUp()">Submit</button>
-			</form>
-		</div>
 	</div>
 	<script src="http://localhost:8080/SYCWeb/js/global/init.js"></script>
 	<script src="http://localhost:8080/SYCWeb/js/global/login.js"></script>
-	<script src="http://localhost:8080/SYCWeb/js/signUp.js"></script>
 </body>
 </html>
