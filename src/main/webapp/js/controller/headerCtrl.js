@@ -1,5 +1,3 @@
-var app = angular.module('sycWebApp');
-
 app.controller('headerCtrl', function($scope, $http, $cookies) {
 	
 	var userCookie = $cookies.get('userCookie');
