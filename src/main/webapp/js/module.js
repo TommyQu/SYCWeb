@@ -11,11 +11,12 @@ var app = angular.module('sycWebApp', ["ui.router", "uiRouterStyles", "ngCookies
 		        .state('signUp', {
 		            url: "/signUp",
 		            templateUrl: "./view/signUp.html",
-		            controller: "headerCtrl"
+	 	            controller: "headerCtrl"
 		        })
 		        .state('menu', {
 		            url: "/menu",
 		            templateUrl: "./view/menu/menu.html",
+		            controller: "menuCtrl"
 		        })
 		        .state('newMenu', {
 		            url: "/newMenu",

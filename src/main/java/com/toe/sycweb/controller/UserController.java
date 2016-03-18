@@ -20,8 +20,8 @@ public class UserController {
 	@RequestMapping(value="login.do")
 	public @ResponseBody String login(String email, String pwd, ModelMap modelMap) {
 		User user = userService.login(email, pwd);
-		String userJSON = JSON.toJSONString(user);
 		if(user != null) {
+			String userJSON = JSON.toJSONString(user);
 			modelMap.addAttribute("userJSON", userJSON);
 			return userJSON;
 		}

@@ -1,5 +1,6 @@
 package com.toe.sycweb.entity;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -15,6 +16,8 @@ public class Menu {
 	private String displayImgUrl;
 	private String content;
 	private List<String> contentImgUrlList;
+	private String createdAt;
+	private User createdBy;
 	
 	public String getId() {
 		return id;
@@ -46,6 +49,17 @@ public class Menu {
 	public void setContentImgUrlList(List<String> contentImgUrlList) {
 		this.contentImgUrlList = contentImgUrlList;
 	}
-	
+	public String getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+	public User getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
+	}
 	
 }

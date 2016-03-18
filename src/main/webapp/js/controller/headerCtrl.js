@@ -1,12 +1,10 @@
 app.controller('headerCtrl', function($scope, $http, $cookies) {
 	
-	var userCookie = $cookies.get('userCookie');
-	
+	var userCookie = $cookies.getObject('userCookie');
 	$scope.loginShow = true;
 	if("" != userCookie && userCookie != null) {
-		var userObj = JSON.parse(userCookie);
 		$scope.loginShow = false;
-		$scope.nickname = userObj.nickname;
+		$scope.nickname = userCookie.nickname;
 	}
 	
 	$scope.login = function () {
@@ -25,7 +23,9 @@ app.controller('headerCtrl', function($scope, $http, $cookies) {
 				if("fail" == result)
 					alert("Login Failed!");
 				else {
-					$cookies.put('userCookie', response.data);
+					userCookie = JSON.parse(response.data);
+					$cookies.putObject('userCookie', userCookie);
+					alert("Login Successfully!");
 					location.reload();
 				}
 			}, function errorCallback(response) {
