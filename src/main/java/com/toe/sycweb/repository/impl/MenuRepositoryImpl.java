@@ -1,5 +1,7 @@
 package com.toe.sycweb.repository.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
@@ -17,10 +19,20 @@ public class MenuRepositoryImpl implements IMenuRepository {
 	public String newMenu(Menu menu) {
 		try {
 			mongoTemplate.insert(menu, "menu");
+			return "success";
 		} catch (Exception e) {
 			return e.getMessage().toString();
 		}
-		return "success";
+	}
+
+	@Override
+	public List<Menu> getAllMenus() {
+		try {
+			return mongoTemplate.findAll(Menu.class, "menu");
+		} catch (Exception e) {
+			System.out.println(e.getMessage().toString());
+			return null;
+		}
 	}
 
 }

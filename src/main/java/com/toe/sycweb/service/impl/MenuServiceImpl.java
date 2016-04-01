@@ -1,5 +1,7 @@
 package com.toe.sycweb.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,11 @@ public class MenuServiceImpl implements IMenuService {
 	@Override
 	public String newMenu(Menu menu) {
 		return menuRepository.newMenu(menu);
+	}
+
+	@Override
+	public List<Menu> getAllMenus() {
+		return menuRepository.getAllMenus();
 	}
 
 }

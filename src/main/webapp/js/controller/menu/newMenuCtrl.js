@@ -5,7 +5,6 @@ app.controller('newMenuCtrl', function($scope, $http, $cookies) {
 	$scope.newMenu = function () {
 		var title = $scope.title;
 		var content = $scope.content;
-		alert(angular.toJson(userCookie));
 		$http({
 			method: 'GET',
 			url: 'http://localhost:8080/SYCWeb/menu/newMenu.do',
@@ -17,9 +16,10 @@ app.controller('newMenuCtrl', function($scope, $http, $cookies) {
 		}).then(function successCallback(response) {
 				var result = response.data;
 				if("fail" == result)
-					alert("Login Failed!");
+					alert("Create menu Failed!");
 				else {
-					location.reload();
+					alert("Create menu successfully!");
+					window.history.back();
 				}
 			}, function errorCallback(response) {
 				alert(response.data);

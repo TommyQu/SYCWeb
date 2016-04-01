@@ -49,4 +49,9 @@ public class MenuController {
 		}
 	}
 	
+	@RequestMapping(value="getAllMenus.do")
+	public @ResponseBody String getAllMenus() {
+		String allMenusJSON = JSON.toJSONString(menuService.getAllMenus());
+		return allMenusJSON;
+	}
 }
