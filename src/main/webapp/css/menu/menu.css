@@ -1,5 +1,21 @@
 #new-menu-btn {
 	float: right;
 	margin-top: -65px;
-	margin-right: 60px;
+	margin-right: 100px;
+}
+
+#menu-content {
+	margin-left: -60px;
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.menu-card {
+	width: 350px;
+	cursor: pointer;
+}
+
+md-card md-card-content > p:last-child {
+	margin-top: 30px;
 }

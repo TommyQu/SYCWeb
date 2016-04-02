@@ -1,4 +1,4 @@
-var app = angular.module('sycWebApp', ["ui.router", "uiRouterStyles", "ngCookies"]);
+var app = angular.module('sycWebApp', ["ui.router", "ngMaterial", "uiRouterStyles", "ngCookies"]);
 		app.config(function($stateProvider, $urlRouterProvider){
 			$urlRouterProvider.otherwise("/home")
 		      
@@ -27,6 +27,14 @@ var app = angular.module('sycWebApp', ["ui.router", "uiRouterStyles", "ngCookies
 		            controller: "newMenuCtrl",
 		            data: {
 		            	css: 'http://localhost:8080/SYCWeb/css/menu/newMenu.css'
+		            }
+		        })
+		        .state('singleMenu', {
+		            url: "/singleMenu/:id",
+		            templateUrl: "./view/menu/singleMenu.html",
+		            controller: "singleMenuCtrl",
+		            data: {
+		            	css: 'http://localhost:8080/SYCWeb/css/menu/singleMenu.css'
 		            }
 		        })
 		});

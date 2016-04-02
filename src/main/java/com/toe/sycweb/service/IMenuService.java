@@ -7,4 +7,5 @@ import com.toe.sycweb.entity.Menu;
 public interface IMenuService {
 	public String newMenu(Menu menu);
 	public List<Menu> getAllMenus();
+	public Menu getSingleMenu(String id);
 }

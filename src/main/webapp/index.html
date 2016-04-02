@@ -8,7 +8,13 @@
   	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.min.js"></script>
   	<!-- UI-Router -->
-  	<script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>  	
+  	<script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script> 
+  	<!-- Angular Material --> 	
+  	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -21,11 +27,9 @@
 <body ng-app="sycWebApp" ui-router-styles>
 	<div>
 		<header ng-include="'view/header.html'"></header>
-			<div class="container">
-								
-					<div ui-view></div>
-				
-			</div>		
+		<div class="container" id="main-content">
+			<div ui-view></div>
+		</div>		
 	</div>
 	
 	
@@ -35,5 +39,6 @@
 	<script src="js/controller/homeCtrl.js"></script>
 	<script src="js/controller/menu/menuCtrl.js"></script>
 	<script src="js/controller/menu/newMenuCtrl.js"></script>
+	<script src="js/controller/menu/singleMenuCtrl.js"></script>
 </body>
 </html>

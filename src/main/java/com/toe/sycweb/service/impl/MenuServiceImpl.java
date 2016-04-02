@@ -25,4 +25,9 @@ public class MenuServiceImpl implements IMenuService {
 		return menuRepository.getAllMenus();
 	}
 
+	@Override
+	public Menu getSingleMenu(String id) {
+		return menuRepository.getSingleMenu(id);
+	}
+
 }

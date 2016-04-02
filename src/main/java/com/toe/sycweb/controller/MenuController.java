@@ -54,4 +54,10 @@ public class MenuController {
 		String allMenusJSON = JSON.toJSONString(menuService.getAllMenus());
 		return allMenusJSON;
 	}
+	
+	@RequestMapping(value="getSingleMenu.do")
+	public @ResponseBody String getSingleMenu(String id) {
+		String singleMenuJSON = JSON.toJSONString(menuService.getSingleMenu(id));
+		return singleMenuJSON;
+	}
 }

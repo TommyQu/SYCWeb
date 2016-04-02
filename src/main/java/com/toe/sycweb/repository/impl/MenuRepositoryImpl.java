@@ -35,4 +35,14 @@ public class MenuRepositoryImpl implements IMenuRepository {
 		}
 	}
 
+	@Override
+	public Menu getSingleMenu(String id) {
+		try {
+			return mongoTemplate.findById(id, Menu.class, "menu");
+		} catch (Exception e) {
+			System.out.println(e.getMessage().toString());
+			return null;
+		}
+	}
+
 }
