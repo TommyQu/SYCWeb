@@ -18,6 +18,7 @@ public class Menu {
 	private List<String> contentImgUrlList;
 	private String createdAt;
 	private User createdBy;
+	private List<Comment> comments;
 	
 	public String getId() {
 		return id;
@@ -60,6 +61,12 @@ public class Menu {
 	}
 	public void setCreatedBy(User createdBy) {
 		this.createdBy = createdBy;
+	}
+	public List<Comment> getComments() {
+		return comments;
+	}
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
 	
 }

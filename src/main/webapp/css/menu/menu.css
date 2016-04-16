@@ -15,7 +15,3 @@
 	width: 350px;
 	cursor: pointer;
 }
-
-md-card md-card-content > p:last-child {
-	margin-top: 30px;
-}

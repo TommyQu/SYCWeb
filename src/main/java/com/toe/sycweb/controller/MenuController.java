@@ -60,4 +60,9 @@ public class MenuController {
 		String singleMenuJSON = JSON.toJSONString(menuService.getSingleMenu(id));
 		return singleMenuJSON;
 	}
+	
+	@RequestMapping(value="newComment.do")
+	public @ResponseBody String newComment(String userCookie, String menuId) {
+		return null;
+	}
 }

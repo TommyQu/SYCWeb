@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
+import com.toe.sycweb.entity.Comment;
 import com.toe.sycweb.entity.User;
 import com.toe.sycweb.repository.IUserRepository;
 
@@ -46,5 +47,6 @@ public class UserRepositoryImpl implements IUserRepository{
 			return e.getMessage().toString();
 		}
 	}
+
 
 }

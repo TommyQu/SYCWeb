@@ -3,6 +3,7 @@ package com.toe.sycweb.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.toe.sycweb.entity.Comment;
 import com.toe.sycweb.entity.User;
 import com.toe.sycweb.repository.IUserRepository;
 import com.toe.sycweb.repository.impl.UserRepositoryImpl;

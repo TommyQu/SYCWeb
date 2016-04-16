@@ -5,5 +5,16 @@
 	<p>Created At: {{singleMenu.createdAt}}</p> 
 	<img ng-src="{{singleMenu.displayImgUrl}}" width="200px" height="200px" alt="Display img">
 	<p>{{singleMenu.content}}</p> 
-
+	<div class="form-group">
+		<label for="comment">Comment:</label>
+		<textarea class="form-control" rows="5" id="comment"></textarea>
+		<button class="btn btn-default" ng-click="newComment()">Submit</button>
+	</div>
+	<h2>Comments</h2>
+	<ul>
+		<li>
+			<div>
+			</div>
+		</li>
+	</ul>
 </div>

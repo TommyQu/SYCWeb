@@ -1,5 +1,6 @@
 package com.toe.sycweb.service;
 
+import com.toe.sycweb.entity.Comment;
 import com.toe.sycweb.entity.User;
 
 public interface IUserService {
